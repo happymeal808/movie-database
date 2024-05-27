@@ -1,10 +1,12 @@
 // Header
 
 import React from 'react';
+import '../scss/styles.scss';
+import { Link, AppRouter } from '../routers/AppRouter'
 
 const Header = ({ title }) => (
   <header>
-    <h1>{title}</h1>
+    <Link></Link>
   </header>
 );
 

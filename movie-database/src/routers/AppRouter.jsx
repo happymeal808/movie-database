@@ -17,10 +17,10 @@ const AppRouter = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/favorites">Favorites</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/favorites">Favorites</Link>
             </li>
           </ul>
         </nav>
