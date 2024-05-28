@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './scss/styles.scss';
 import Header from './components/Header';
 import { fetchPopularMovies } from './api';
 import { appTitle, imageBaseURL } from './globals/globalVariables';
