@@ -1,4 +1,19 @@
-#header{
-    background-color: black;
-    color: aliceblue;
-}
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  
+    &__title {
+      font-size: 2rem;
+      text-align: center;
+  
+      &-link {
+        color: #fff;
+        text-decoration: none;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }

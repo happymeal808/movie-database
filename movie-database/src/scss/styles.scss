@@ -2,16 +2,23 @@
 
 // Resets
 @use './base/normalize';
+@use './base/all';
 
 
 // Components
 @use './components/header';
 @use './components/footer';
+@use './components/nav';
+@use './components/movieCard';
 
 
 // Pages
+@use './pages/pageHome';
+@use './pages/pageFavourites';
+@use './pages/pageAbout';
+@use './pages/pageMovie';
+@use './pages/pageNotFound';
 
-@use './components/pageHome';
 // Utilities
 
 // Google Fonts - Import
