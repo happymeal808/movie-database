@@ -21,20 +21,23 @@ function PageFavourites() {
             No favourite movies. Return to the <Link to="/">home</Link> page to add some favourite movies!
           </p>
         ) : (
-          <div className="movie-grid">
-            {favs.map((singleMovieCard, i) => (
-              <MovieCard
-                key={i}
-                id={singleMovieCard.id}
-                title={singleMovieCard.title}
-                overview={singleMovieCard.overview}
-                posterPath={singleMovieCard.posterPath}
-                releaseDate={singleMovieCard.releaseDate}
-                rating={singleMovieCard.rating}
-                genres={singleMovieCard.genres}
-                isFav={isFav(favs, '/favs', singleMovieCard.id)} // Use the isFav function
-              />
-            ))}
+          <div className="page-favourites">
+            <div className="movie-grid">
+              {favs.map((singleMovieCard, i) => (
+                <MovieCard
+                  key={i}
+                  id={singleMovieCard.id}
+                  title={singleMovieCard.title}
+                  overview={singleMovieCard.overview}
+                  posterPath={singleMovieCard.posterPath}
+                  releaseDate={singleMovieCard.releaseDate}
+                  rating={singleMovieCard.rating}
+                  genres={singleMovieCard.genres}
+                  isFav={isFav(favs, '/favs', singleMovieCard.id)} // Use the isFav function
+                  showMoreInfoLink={true}
+                />
+              ))}
+            </div>
           </div>
         )}
       </section>

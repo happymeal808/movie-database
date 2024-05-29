@@ -11,7 +11,6 @@ import { appTitle, appAuthor } from '../globals/globalVariables';
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
       <div className="wrapper">
         <Header title={appTitle} />
         <Routes>
@@ -23,7 +22,6 @@ const AppRouter = () => {
         </Routes>
         <Footer author={appAuthor} />
       </div>
-    </BrowserRouter>
   );
 };
 

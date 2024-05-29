@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { apiKey } from '../globals/globalVariables';
-import FavButton from '../components/FavButton'; // Import the FavButton component
+import MovieCard from '../components/MovieCard';
+import { addFav } from '../features/favs/favsSlice';
+import '../scss/styles.scss';
+import isFav from '../utils/isFav';
 
 const PageMovie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const favs = useSelector((state) => state.favs.items);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -26,24 +32,22 @@ const PageMovie = () => {
   }
 
   return (
-    <div>
-      <h2>{movie.title}</h2>
-      <p>{movie.overview}</p>
-      <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-      <p>Release Date: {movie.release_date}</p>
-      <p>Rating: {movie.vote_average}</p>
-      <p>Genres: {movie.genres.map(genre => genre.name).join(', ')}</p>
-      <FavButton
-        movieObj={{
-          id: movie.id,
-          title: movie.title,
-          overview: movie.overview,
-          posterPath: movie.poster_path,
-          releaseDate: movie.release_date,
-          rating: movie.vote_average,
-          genres: movie.genres.map(genre => genre.name)
-        }}
-      />
+    <div className="page-movie">
+      {movie && (
+        <MovieCard
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          overview={movie.overview}
+          posterPath={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} // Corrected prop name
+          releaseDate={movie.release_date}
+          rating={movie.vote_average}
+          genres={movie.genres.map(genre => genre.name)}
+          isFav={isFav(favs, null, movie.id)}
+          addFav={dispatch(addFav)}
+          showMoreInfoLink={false}
+        />
+      )}
     </div>
   );
 };

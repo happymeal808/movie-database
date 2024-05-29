@@ -1,4 +1,4 @@
-import { apiKey, nowPlaying, popular, topRated, upcoming, imageBaseURL } from './globals/globalVariables';
+import { apiKey, nowPlaying, popular, topRated, upcoming, imageBaseURL, trending } from './globals/globalVariables';
 
 const fetchMovies = async (url) => {
   try {
@@ -47,6 +47,7 @@ const genreIdToName = (id) => {
   return genres[id] || 'Unknown';
 };
 
+export const fetchTrendingMovies = () => fetchMovies(trending);
 export const fetchNowPlayingMovies = () => fetchMovies(nowPlaying);
 export const fetchPopularMovies = () => fetchMovies(popular);
 export const fetchTopRatedMovies = () => fetchMovies(topRated);

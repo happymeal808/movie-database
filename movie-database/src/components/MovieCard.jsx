@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addFav, deleteFav } from '../features/favs/favsSlice';
 import FavButton from './FavButton';
 
-function MovieCard({ movieObj, id, title, overview, posterPath, releaseDate, rating, genres, isFav }) {
+function MovieCard({ id, title, overview, posterPath, releaseDate, rating, genres, isFav, showMoreInfoLink }) {
   const dispatch = useDispatch();
 
   function handleFavClick(addToFav, obj) {
@@ -26,14 +26,14 @@ function MovieCard({ movieObj, id, title, overview, posterPath, releaseDate, rat
         <p className="movie-card__genres">Genres: {genres.join(', ')}</p>
         <p className="movie-card__overview">{overview}</p>
         <p>{isFav ? 'Favorite' : 'Not Favorite'}</p>
-        <Link to={`/movie/${id}`} className="movie-card__link">More Info</Link>
-      </div>
-      <div className="btn-favourite">
+        {showMoreInfoLink && <Link to={`/movie/${id}`} className="movie-card__link">More Info</Link>}
+        <div className="btn-favourite">
         <FavButton
           movieObj={{ id, title, overview, posterPath, releaseDate, rating, genres }}
           remove={isFav}
           handleFavClick={handleFavClick}
         />
+      </div>
       </div>
     </div>
   );
@@ -47,7 +47,8 @@ MovieCard.propTypes = {
   releaseDate: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
-  isFav: PropTypes.bool.isRequired,
+  isFav: PropTypes.bool,
+  showMoreInfoLink: PropTypes.bool, // Prop to conditionally render "More Info" link
 };
 
 export default MovieCard;

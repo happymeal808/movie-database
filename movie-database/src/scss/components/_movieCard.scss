@@ -16,7 +16,7 @@
   
   .movie-card p {
     font-size: 14px;
-    color: #555;
+    color: #ffffff;
   }
   
   .movie-card a {
@@ -31,4 +31,46 @@
   
   .movie-card a:hover {
     background-color: #0056b3;
+  }
+
+  .movie-card__details{
+    .movie-card__overview{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  // Hover details
+  .page-home,
+  .page-favourites{
+    .movie-card {
+      position: relative;
+      overflow: hidden; /* Ensure that the details div doesn't overflow outside the card */
+    }
+    
+    .movie-card__poster {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease; /* Add transition for smooth effect */
+    }
+    
+    /* Initially hide the details div */
+    .movie-card__details {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      color: #fff;
+      padding: 10px;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 0.3s ease; /* Add transition for smooth effect */
+    }
+    
+    /* On hover, fade in the details div */
+    .movie-card:hover .movie-card__details {
+      opacity: 1; /* Fade in */
+    }
   }
