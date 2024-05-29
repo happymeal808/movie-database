@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import MovieCard from '../components/MovieCard';
 import { fetchNowPlayingMovies, fetchPopularMovies, fetchTopRatedMovies, fetchUpcomingMovies } from '../api';
+import MovieSlideshow from '../components/MovieSlideshow';
 import '../scss/styles.scss';
+import isFav from '../utils/isFav';
 
 const PageHome = () => {
     const [movies, setMovies] = useState([]);
     const [category, setCategory] = useState('nowPlaying');
+    const favs = useSelector((state) => state.favs.items);
   
     useEffect(() => {
       const fetchMovies = async () => {
@@ -30,7 +34,9 @@ const PageHome = () => {
   
     return (
       <div className="page-home">
-        <h1>Welcome to the Movie Database</h1>
+        <div>
+            <MovieSlideshow />
+        </div>
         <div className="category-buttons">
           <button onClick={() => setCategory('nowPlaying')}>Now Playing</button>
           <button onClick={() => setCategory('popular')}>Popular</button>
@@ -48,6 +54,7 @@ const PageHome = () => {
               releaseDate={movie.releaseDate}
               rating={movie.rating}
               genres={movie.genres}
+              isFav={isFav(favs, null, movie.id)}
             />
           ))}
         </div>

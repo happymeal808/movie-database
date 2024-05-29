@@ -1,13 +1,15 @@
 import React from 'react';
-import AppRouter from './routers/AppRouter'; // Ensure this import is correct
+import { Provider } from 'react-redux';
+import { store } from './store/store';
+import AppRouter from './routers/AppRouter';
 import './scss/styles.scss';
 
-const App = () => {
+function App() {
   return (
-    <div className="app">
+    <Provider store={store}>
       <AppRouter />
-    </div>
+    </Provider>
   );
-};
+}
 
 export default App;

@@ -1,4 +1,4 @@
-import { apiKey, imageBaseURL, nowPlaying, popular, topRated, upcoming } from './globals/globalVariables';
+import { apiKey, nowPlaying, popular, topRated, upcoming, imageBaseURL } from './globals/globalVariables';
 
 const fetchMovies = async (url) => {
   try {
@@ -14,7 +14,7 @@ const fetchMovies = async (url) => {
       posterPath: `https://image.tmdb.org/t/p/w500${movie.poster_path}`, // Full URL to the poster image
       releaseDate: movie.release_date,
       rating: movie.vote_average,
-      genres: movie.genre_ids.map(genreId => genreIdToName(genreId)) // Convert genre IDs to names
+      genres: movie.genre_ids.map(genreId => genreIdToName(genreId)),
     }));
   } catch (error) {
     console.error('Error fetching data:', error);

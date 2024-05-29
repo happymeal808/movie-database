@@ -1,26 +1,29 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function FavButton({ kittenObj, remove, handleFavClick }) {
+function FavButton({ movieObj, remove = false, handleFavClick }) {
 
-    function handleAddFav(){
-        handleFavClick(true, kittenObj);
+    function handleAddFav() {
+        handleFavClick(true, movieObj);
     }
 
-    function handleRemoveFav(){
-        handleFavClick(false, kittenObj);
+    function handleRemoveFav() {
+        handleFavClick(false, movieObj);
     }
 
     return (
         <>
-            {remove === false ? 
+            {!remove ? 
             <button onClick={handleAddFav}>Add To Favs</button> : 
             <button onClick={handleRemoveFav}>Remove From Favs</button>}
         </>
     );
-    
 }
 
-FavButton.defaultProps = {
-    remove: false
-}
+FavButton.propTypes = {
+    movieObj: PropTypes.object.isRequired,
+    remove: PropTypes.bool,
+    handleFavClick: PropTypes.func.isRequired,
+};
 
 export default FavButton;

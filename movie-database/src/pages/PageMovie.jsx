@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { apiKey } from '../globals/globalVariables';
+import FavButton from '../components/FavButton'; // Import the FavButton component
 
 const PageMovie = () => {
   const { id } = useParams();
@@ -32,6 +33,17 @@ const PageMovie = () => {
       <p>Release Date: {movie.release_date}</p>
       <p>Rating: {movie.vote_average}</p>
       <p>Genres: {movie.genres.map(genre => genre.name).join(', ')}</p>
+      <FavButton
+        movieObj={{
+          id: movie.id,
+          title: movie.title,
+          overview: movie.overview,
+          posterPath: movie.poster_path,
+          releaseDate: movie.release_date,
+          rating: movie.vote_average,
+          genres: movie.genres.map(genre => genre.name)
+        }}
+      />
     </div>
   );
 };
