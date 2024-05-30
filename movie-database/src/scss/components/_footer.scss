@@ -1,6 +1,7 @@
+@import '../base/vars';
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: $lightgrey;
+    color: $black;
     text-align: center;
     padding: 1rem;
     width: 100%;

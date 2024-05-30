@@ -1,5 +1,5 @@
 // Imports
-
+@use './base/vars';
 
 // Resets
 @use './base/normalize';
@@ -7,9 +7,11 @@
 
 
 // Components
+@use './components/categoryButtons';
 @use './components/header';
 @use './components/footer';
 @use './components/nav';
+@use './components/mobileNav';
 @use './components/movieCard';
 @use './components/movieSlideshow';
 
@@ -25,4 +27,3 @@
 
 // Google Fonts - Import
 @import url('https://fonts.googleapis.com/css?family=Alatsi|Roboto:400,400i,700,700i&display=swap');
-@import url('https://use.typekit.net/ege7suw.css');

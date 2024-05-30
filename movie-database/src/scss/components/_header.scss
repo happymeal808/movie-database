@@ -1,28 +1,12 @@
+@import '../base/vars';
+
 .header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    margin: 0;
-    
-    &__neuvie-logo{
-      font-family: "owners", sans-serif;
-      font-weight: 200;
-      font-style: italic;
-      width: 5rem;
-      margin: 0;
-    }
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  margin: 0;
   
-    &__title {
-      font-size: 2rem;
-      text-align: center;
-  
-      &-link {
-        color: #fff;
-        text-decoration: none;
-  
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
+  &__neuvie-logo{
+    width: 5rem;
   }
+}
