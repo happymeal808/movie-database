@@ -1,32 +1,32 @@
 .movie-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
+    border: none;
+    border-radius: 0.375rem;
+    margin: 1rem;
     text-align: center;
   }
   
   .movie-card img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
   }
   
   .movie-card h3 {
-    margin: 10px 0;
+    margin: 1rem 0;
   }
   
   .movie-card p {
-    font-size: 14px;
+    font-size: 1rem;
     color: #ffffff;
   }
   
   .movie-card a {
     display: inline-block;
-    margin-top: 10px;
-    padding: 5px 10px;
+    margin-top: .75rem;
+    padding: 0.5rem 0.75rem;
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 0.25rem;
   }
   
   .movie-card a:hover {
@@ -64,7 +64,7 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
       color: #fff;
-      padding: 10px;
+      padding: 0.75rem;
       opacity: 0; /* Initially hidden */
       transition: opacity 0.3s ease; /* Add transition for smooth effect */
     }
