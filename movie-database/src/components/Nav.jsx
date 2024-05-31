@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MobileNav from "./MobileNav";
 import classNames from 'classnames';
@@ -7,16 +7,12 @@ import neuvieLogo from '../assets/neuvie-logo.svg';
 const Nav = () => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-  useEffect(() => {
-    if (mobileNavOpen) {
-      document.body.classList.add('nav-open');
-    } else {
-      document.body.classList.remove('nav-open');
-    }
-  }, [mobileNavOpen]);
-
   const toggleMobileNav = () => {
     setMobileNavOpen(!mobileNavOpen);
+  };
+
+  const closeMobileNav = () => {
+    setMobileNavOpen(false);
   };
 
   const active = classNames('mobile-menu', {
@@ -45,7 +41,7 @@ const Nav = () => {
           </span>
         </div>
       </header>
-      <MobileNav open={mobileNavOpen} />
+      <MobileNav open={mobileNavOpen} onClose={closeMobileNav} />
     </>
   );
 }

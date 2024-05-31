@@ -1,4 +1,18 @@
+@import '../base/vars';
 .category-buttons{
-    border-top: 0.125rem;
-
+    max-width: 100%;
+    
+    button {
+        width: 25%;
+        background-color: $black;
+        border: 2px solid $blue;
+        border-bottom: none;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        padding-top: 0.5rem;
+        color: $lightgrey;
+    }
+    button{
+        
+    }
 }
