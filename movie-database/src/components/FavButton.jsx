@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import heartNoFill from '../assets/heart-nofill.svg';
+import heartFill from '../assets/heart-fill.svg';
+
 
 function FavButton({ movieObj, remove = false, handleFavClick }) {
 
@@ -14,8 +17,8 @@ function FavButton({ movieObj, remove = false, handleFavClick }) {
     return (
         <>
             {!remove ? 
-            <button onClick={handleAddFav}>Add To Favs</button> : 
-            <button onClick={handleRemoveFav}>Remove From Favs</button>}
+            <button onClick={handleAddFav}><img src={heartNoFill} alt="add to favs" className='heart-icon heart-nofill'/></button> : 
+            <button onClick={handleRemoveFav}><img src={heartFill} alt="remove from favs" className='heart-icon heart-fill'/></button>}
         </>
     );
 }

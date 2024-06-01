@@ -1,0 +1,27 @@
+@import '../base/vars';
+
+.fav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.heart-icon {
+    width: 24px; /* Adjust the size as needed */
+    height: 24px;
+}
+
+.heart-nofill {
+    fill: grey; /* Adjust the color as needed */
+}
+
+.heart-fill {
+    fill: red; /* Adjust the color as needed */
+}
