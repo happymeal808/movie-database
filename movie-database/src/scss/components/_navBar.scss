@@ -1,0 +1,146 @@
+@import '../base/vars';
+
+.nav-open {
+  overflow: hidden; // Disable scrolling
+  @media (min-width: 768px) {
+    overflow: visible; 
+  }
+}
+
+.navigation-wrapper {
+  background-color: $lightgrey;
+  padding: 0.5rem 1rem;
+
+  .navigation-header {
+    max-width: 800px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navigation-names,
+    .navigation-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .navigation-names {
+      justify-content: space-between;
+
+      .link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+      }
+    }
+
+    .navigation-links {
+      .mobile-menu {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 10;
+        border: none;
+        border-radius: 10rem;
+      }
+    }
+  }
+}
+
+.mobile-nav-wrapper {
+  z-index: 1;
+  width: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $black;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  height: 100%;
+  transition: opacity 0.75s, visibility 0.75s, height 0.75s;
+  overflow: hidden;
+  @media (min-width: 768px){
+    flex-direction: row;
+    
+  }
+
+  ul {
+    list-style: none; // Remove default bullets
+    text-align: center;
+    
+    li{
+      padding: 1rem;
+    }
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    height: 100vh;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: $lightgrey;
+    font-family: 'open-sans', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    border-radius: 3px;
+    margin: 0.5rem 0.5rem;
+
+
+    @media (min-width: 768px) {
+      width: auto;
+      font-size: 1rem;
+      padding: 0.5rem;
+      margin: 0 0.5rem;
+      color: $black;
+    }
+  }
+
+
+
+  .nav-link.active {
+    font-weight: bold;
+
+    @media (min-width: 768px) {
+      // additional styles for active link on larger screens
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navigation-wrapper {
+    .navigation-header {
+      .navigation-links {
+        .mobile-menu {
+          display: none; // hide mobile menu button on larger screens
+        }
+      }
+    }
+
+    .mobile-nav-wrapper {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      background-color: transparent;
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+
+      .mobile-link {
+        color: $black;
+      }
+    }
+  }
+}

@@ -1,12 +1,11 @@
 import React from 'react';
-import Nav from './Nav'; // Import Nav component
-import '../scss/styles.scss';
+import NavBar from './NavBar';
 
 const Header = () => {
-  console.log("Header component rendered");
-  return (
-    <Nav />
-  );
+    console.log("Header component rendered");
+    return (
+        <NavBar />
+    );
 }
 
 export default Header;
