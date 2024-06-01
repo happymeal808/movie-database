@@ -15,7 +15,6 @@ function PageFavourites() {
   return (
     <main>
       <section>
-        <h2>Favourite Movies</h2>
         {favs.length < 1 ? (
           <p>
             No favourite movies. Return to the <Link to="/">home</Link> page to add some favourite movies!

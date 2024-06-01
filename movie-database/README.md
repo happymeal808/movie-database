@@ -1,4 +1,9 @@
-# React + Vite
+# TO DO LIST
+
+ * [ ] ergo mobile thumb nav
+ * [ ] mobile slick carousels
+ * [ ] desktop nav
+ * [ ] single movie page
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
