@@ -15,12 +15,16 @@ function PageFavourites() {
   return (
     <main>
       <section>
+        
         {favs.length < 1 ? (
-          <p>
-            No favourite movies. Return to the <Link to="/">home</Link> page to add some favourite movies!
-          </p>
+          <div className='page-no-favourites'>
+            <h2 className='favourites-header'>Favourites</h2>
+            <h3>Uh oh!</h3>
+            <p>You currently don't have any movies in your favourite list! Check back in once you have selected the heart icon on you favourite flicks over <Link to="/">here</Link>!</p>
+          </div>
         ) : (
           <div className="page-favourites">
+            <h2 className='favourites-header'>Favourites</h2>
             <div className="movie-grid">
               {favs.map((singleMovieCard, i) => (
                 <MovieCard
@@ -34,6 +38,7 @@ function PageFavourites() {
                   genres={singleMovieCard.genres}
                   isFav={isFav(favs, '/favs', singleMovieCard.id)} // Use the isFav function
                   showMoreInfoLink={true}
+                  currentPage="PageFavourites" // Pass the currentPage prop
                 />
               ))}
             </div>

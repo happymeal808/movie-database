@@ -1,1 +1,41 @@
 @import '../base/vars';
+
+.page-movie{
+    .movie-backdrop{
+        object-fit: cover;
+        mask-image: linear-gradient(to bottom, $black 1%, transparent 100%);
+    }
+    .movie-card__poster{
+        display: none;
+    }
+    .movie-card__details{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+
+        .movie-card__rating{
+            position: static;
+        }
+
+        .movie-card__title{
+            color: $lightgrey;
+        }
+        .movie-card__overview{
+            overflow: visible;
+            white-space: wrap;
+        }
+        
+    }
+    .movie-trailer {
+        margin-top: 2rem;
+        text-align: center;
+    
+        h2 {
+          margin-bottom: 1rem;
+        }
+    
+        iframe {
+          max-width: 100%;
+        }
+      }
+}

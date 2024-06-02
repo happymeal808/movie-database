@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import MovieCard from '../components/MovieCard';
 import LoadMoreButton from '../components/LoadMoreButton';
 import { fetchNowPlayingMovies, fetchPopularMovies, fetchTopRatedMovies, fetchUpcomingMovies } from '../api';
-import '../scss/styles.scss';
 import isFav from '../utils/isFav';
 
 const PageHome = () => {

@@ -43,23 +43,24 @@ const NavBar = () => {
                     <Link to="/" className="header__title-link">
                         <img src={neuvieLogo} alt="Neuvie Logo" className="header__neuvie-logo" />
                     </Link>
+
+                    <div className="navigation-links">
+                        <NavButton buttonClass={buttonClass} hamClass={hamClass} toggleMobileNav={toggleMobileNav} />
+                    </div>
+                    <nav aria-label="mobile navigation" className={displayMobileNavLinks}>
+                        <ul>
+                            <li>
+                                <NavLink className="nav-link" activeclassname="active" to="/" onClick={closeMobileNav}>Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="nav-link" activeclassname="active" to="/about" onClick={closeMobileNav}>About</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className="nav-link" activeclassname="active" to="/favourites" onClick={closeMobileNav}>Favourites</NavLink>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <div className="navigation-links">
-                    <NavButton buttonClass={buttonClass} hamClass={hamClass} toggleMobileNav={toggleMobileNav} />
-                </div>
-                <nav aria-label="mobile navigation" className={displayMobileNavLinks}>
-                    <ul>
-                        <li>
-                            <NavLink className="nav-link" activeClassName="active" exact to="/" onClick={closeMobileNav}>Home</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="nav-link" activeClassName="active" to="/about" onClick={closeMobileNav}>About</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className="nav-link" activeClassName="active" to="/favourites" onClick={closeMobileNav}>Favourites</NavLink>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </header>
     );

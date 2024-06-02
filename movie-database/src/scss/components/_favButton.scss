@@ -14,14 +14,15 @@
 }
 
 .heart-icon {
-    width: 24px; /* Adjust the size as needed */
+    width: 24px;
     height: 24px;
-}
-
-.heart-nofill {
-    fill: grey; /* Adjust the color as needed */
+    fill: red; /* Use the current text color */
 }
 
 .heart-fill {
-    fill: red; /* Adjust the color as needed */
+    color: red;
+}
+
+.heart-nofill {
+    color: gray;
 }

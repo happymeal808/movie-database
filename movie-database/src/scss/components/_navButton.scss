@@ -9,7 +9,7 @@
 .line {
   fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: #000;
+  stroke: $black;
   stroke-width: 5.5;
   stroke-linecap: round;
 }
@@ -42,13 +42,29 @@
     justify-content: space-between;
     align-items: center;
 
+    @media (min-width: 768px){
+      max-width: 60rem;
+    }
+
+    .navigation-links {
+      .mobile-menu {
+        position: fixed;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        z-index: 10;
+        border: none;
+        border-radius: 200rem;
+      }
+    }
+
     .navigation-names {
       .header__title-link {
         display: flex;
         align-items: center;
+        flex-direction: row;
 
         .header__neuvie-logo {
-          height: 40px; // adjust as needed
+          height: 7rem; // adjust as needed
         }
       }
     }
@@ -61,7 +77,7 @@
         display: block;
 
         @media (min-width: 768px) {
-          display: none; // hide mobile menu button on larger screens
+          display: none;
           
         }
       }

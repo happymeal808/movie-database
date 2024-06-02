@@ -1,15 +1,14 @@
 // PALETTE
 
-$blue: #8EB8E5;
-$lightgrey: #CFCFCF;
-$ecru: #CDA765;
-$red: #E82A2A;
-$black: #303236;
+$blue: #004FFF;
+$lightgrey: #fefffe;
+$ecru: #ffbf00;
+$red: #fa5252;
+$black: #161616;
+$lightblack: #252525;
 
 // TYPOGRAPHY
-@font-face {
-    font-family: "open-sans", san-serif;
-    src: url(https://use.typekit.net/ege7suw.css);
-}
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-$header: "open-sans", san-serif;
+$headerfont: "Montserrat", sans-serif;
+$bodyfont: "Karla", sans-serif;

@@ -1,27 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { appStorageName, apiKey, baseURL } from '../../globals/globalVariables';
+import { appStorageName } from '../../globals/globalVariables';
 
-function getFavsFromLocalStorage(){
-  const favs = localStorage.getItem(appStorageName)
-  if (favs !== null){
-    return{
-      items:JSON.parse(favs)
-    }
+function getFavsFromLocalStorage() {
+  const favs = localStorage.getItem(appStorageName);
+  if (favs !== null) {
+    return {
+      items: JSON.parse(favs),
+    };
   }
-
   return {
-    items:[]
-  }
+    items: [],
+  };
 }
 
-const favsFromLocalStorage = getFavsFromLocalStorage()
+const favsFromLocalStorage = getFavsFromLocalStorage();
 
 const initialState = {
-  items: favsFromLocalStorage.items
-}
+  items: favsFromLocalStorage.items,
+};
 
-function getIndex(item, arr){
-    return arr.findIndex(arrItem => arrItem.id === item.id);
+function getIndex(item, arr) {
+  return arr.findIndex(arrItem => arrItem.id === item.id);
 }
 
 export const favsSlice = createSlice({
@@ -29,28 +28,26 @@ export const favsSlice = createSlice({
   initialState,
   reducers: {
     addFav: (state, action) => {
-      const newFavs = [...state.items, action.payload];
-      localStorage.setItem(appStorageName, JSON.stringify(newFavs))
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.items = newFavs;
+      const movie = action.payload;
+      const existingIndex = getIndex(movie, state.items);
+      if (existingIndex === -1) {
+        const newFavs = [...state.items, movie];
+        localStorage.setItem(appStorageName, JSON.stringify(newFavs));
+        state.items = newFavs;
+      }
     },
     deleteFav: (state, action) => {
-      const itemsCopy = state.items;
-      itemsCopy.splice(getIndex(action.payload, state.items), 1);
-      localStorage.removeItem(appStorageName, JSON.stringify(itemsCopy))
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.items = itemsCopy;
-    }
+      const movie = action.payload;
+      const index = getIndex(movie, state.items);
+      if (index !== -1) {
+        const newFavs = state.items.slice(0, index).concat(state.items.slice(index + 1));
+        localStorage.setItem(appStorageName, JSON.stringify(newFavs));
+        state.items = newFavs;
+      }
+    },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { addFav, deleteFav } = favsSlice.actions
+export const { addFav, deleteFav } = favsSlice.actions;
 
 export default favsSlice.reducer;

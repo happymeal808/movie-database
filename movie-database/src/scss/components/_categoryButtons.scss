@@ -1,18 +1,43 @@
 @import '../base/vars';
-.category-buttons{
-    max-width: 100%;
-    
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+
     button {
-        width: 25%;
-        background-color: $black;
-        border: 2px solid $blue;
-        border-bottom: none;
+        width: 50%;
+        font-family: $headerfont;
+        font-weight: 600;
+        text-transform: uppercase;
+        background-color: $lightblack;
+        border: 3px solid $ecru;
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
-        padding-top: 0.5rem;
+        padding: 0.5rem 0;
         color: $lightgrey;
+        margin: 0; /* Ensure no margin to prevent gaps */
     }
-    button{
-        
+}
+
+@media (min-width: 768px) {
+    .category-buttons {
+        max-width: 65rem;
+        flex-wrap: nowrap;
+        margin: auto;
+        margin-top: 0.25rem;
+
+        button:hover {
+            background-color: $black;
+        }
+
+        button.selected {
+            border-color: $blue;
+            border-width: 3px;
+            background-color: $black;
+            border-bottom: none;
+            margin: 0 -1rem; 
+            z-index: 10;
+        }
     }
 }

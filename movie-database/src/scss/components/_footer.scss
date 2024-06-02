@@ -1,12 +1,46 @@
 @import '../base/vars';
+
+
 .footer {
-    background-color: $lightgrey;
-    color: $black;
-    text-align: center;
-    padding: 1rem;
-    width: 100%;
+  background-color: $blue;
+  color: $lightgrey;
+  font-family: $bodyfont;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin-top: auto;
+
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    li{
+      margin:0.5rem;
+      svg{
+        height: 100%;
+        fill: $lightgrey;
+        margin: 0 0.5rem;
+      }
+    }
   }
-  
-  .footer p {
-    margin: 0;
+}
+
+@media (min-width: 768px){
+  .footer {
+    padding: 0.125rem 1rem;
+    ul{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0 auto;
+      max-width: 70rem;
+    }
+    .vl{
+      border-left: 3px solid $lightgrey;
+      margin: 0.5rem 0;
+      height: 6rem;
+      margin-left: -1.5px;
+    }
   }
+}
