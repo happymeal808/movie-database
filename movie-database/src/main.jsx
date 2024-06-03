@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import App from './App'; // Ensure this import is correct
 import './scss/styles.scss';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router basename="/neuvie-database"> 
       <App />
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>
 );
