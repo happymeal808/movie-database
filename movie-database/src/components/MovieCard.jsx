@@ -29,14 +29,15 @@ function MovieCard({ id, title, overview, posterPath, releaseDate, rating, genre
         <p className="movie-card__rating">{ratingPercentage}%</p>
         <p className="movie-card__genres">{genres.join(' • ')}</p>
         <p className="movie-card__overview">{overview}</p>
-        <p>{isFav ? 'Favorite' : 'Not Favorite'}</p>
-        {showMoreInfoLink && <Link to={`/movie/${id}`} className="movie-card__link">More Info</Link>}
-        <div className="btn-favourite">
-          <FavButton
-            movieObj={{ id, title, overview, posterPath, releaseDate, rating, genres }}
-            remove={isFav}
-            handleFavClick={handleFavClick}
-          />
+        <div className='interactables'>
+          {showMoreInfoLink && <Link to={`/movie/${id}`} className="movie-card__link">More Info</Link>}
+          <div className="btn-favourite">
+            <FavButton
+              movieObj={{ id, title, overview, posterPath, releaseDate, rating, genres }}
+              remove={isFav}
+              handleFavClick={handleFavClick}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +48,7 @@ MovieCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
-  posterPath: PropTypes.string.isRequired,
+  posterPath: PropTypes.string,
   releaseDate: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,

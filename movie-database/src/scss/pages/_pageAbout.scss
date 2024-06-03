@@ -1,7 +1,7 @@
 @import '../base/vars';
 
 .page-about{
-    margin: 3rem 0;
+    margin: 5rem 0 8rem;
     .icon-about{
         fill: $ecru;
         height: 10rem;
@@ -24,19 +24,18 @@
 
 @media (min-width: 768px){
     .page-about{
-        
         display: flex;
         flex-direction: row;
         margin: 0 auto;
         max-width: 50rem;
-        min-height: 65vh;
+        min-height: 90vh;
         align-items: center;
-        flex-direction: row; // Change to row for larger screens
-        text-align: left; // Align text to the left for larger screens
+        flex-direction: row; 
+        text-align: left;
 
         .icon-about {
-            margin-bottom: 0; // Remove bottom margin for larger screens
-            margin-right: 2rem; // Add right margin for spacing
+            margin-bottom: 0;
+            margin-right: 2rem;
         }
 
         .text-content {

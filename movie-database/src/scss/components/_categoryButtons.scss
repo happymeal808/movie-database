@@ -11,12 +11,22 @@
         font-weight: 600;
         text-transform: uppercase;
         background-color: $lightblack;
-        border: 3px solid $ecru;
+        transition: all 0.5s ease;
+        border: 3px solid $teal;
+        border-bottom: none;
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
         padding: 0.5rem 0;
         color: $lightgrey;
         margin: 0; /* Ensure no margin to prevent gaps */
+    }
+    button:hover {
+        background-color: $black;
+    }
+    button.selected {
+        border-color: $blue;
+        background-color: $black;
+        transition: all 0.5s ease;
     }
 }
 
@@ -27,16 +37,11 @@
         margin: auto;
         margin-top: 0.25rem;
 
-        button:hover {
-            background-color: $black;
-        }
-
         button.selected {
             border-color: $blue;
             border-width: 3px;
             background-color: $black;
             border-bottom: none;
-            margin: 0 -1rem; 
             z-index: 10;
         }
     }

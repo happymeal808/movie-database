@@ -3,12 +3,19 @@
 
 .footer {
   background-color: $blue;
-  color: $lightgrey;
+  color: $black;
   font-family: $bodyfont;
   font-size: 1.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem 0.5rem;
   text-align: center;
   margin-top: auto;
+
+  
+  .footer-logo{
+    height: 5rem;
+    margin: 0;
+    padding: 0;
+  }
 
   ul{
     list-style: none;
@@ -18,8 +25,11 @@
       margin:0.5rem;
       svg{
         height: 100%;
-        fill: $lightgrey;
+        fill: $black;
         margin: 0 0.5rem;
+      }
+      .icon-tmdb{
+        height: 2rem;
       }
     }
   }
@@ -28,16 +38,20 @@
 @media (min-width: 768px){
   .footer {
     padding: 0.125rem 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     ul{
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-evenly;
       margin: 0 auto;
       max-width: 70rem;
     }
     .vl{
-      border-left: 3px solid $lightgrey;
+      border-left: 3px solid $black;
       margin: 0.5rem 0;
       height: 6rem;
       margin-left: -1.5px;

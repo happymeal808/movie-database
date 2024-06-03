@@ -9,7 +9,7 @@
 .line {
   fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: $black;
+  stroke: $blue;
   stroke-width: 5.5;
   stroke-linecap: round;
 }
@@ -54,14 +54,12 @@
         z-index: 10;
         border: none;
         border-radius: 200rem;
+        background-color: $teal;
       }
     }
 
     .navigation-names {
       .header__title-link {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
 
         .header__neuvie-logo {
           height: 7rem; // adjust as needed

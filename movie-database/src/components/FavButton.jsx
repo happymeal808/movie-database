@@ -19,7 +19,7 @@ function FavButton({ movieObj, remove = false, handleFavClick }) {
     );
 
     return (
-        <button onClick={remove ? handleRemoveFav : handleAddFav}>
+        <button className='fav-button' onClick={remove ? handleRemoveFav : handleAddFav}>
             {remove ? heartFill : heartNoFill}
         </button>
     );

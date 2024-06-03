@@ -12,6 +12,7 @@ const fetchMovies = async (url) => {
       title: movie.title,
       overview: movie.overview,
       posterPath: `https://image.tmdb.org/t/p/w500${movie.poster_path}`, // Full URL to the poster image
+      backdropPath: `https://image.tmdb.org/t/p/original${movie.backdrop_path}`, // Full URL to the backdrop image
       releaseDate: movie.release_date,
       rating: movie.vote_average,
       genres: movie.genre_ids.map(genreId => genreIdToName(genreId)),
@@ -44,8 +45,10 @@ const genreIdToName = (id) => {
     10752: 'War',
     37: 'Western',
   };
+
   return genres[id] || 'Unknown';
 };
+
 
 export const fetchTrendingMovies = () => fetchMovies(trending);
 export const fetchNowPlayingMovies = () => fetchMovies(nowPlaying);

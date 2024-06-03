@@ -48,11 +48,16 @@
     opacity: 1; /* Fade in */
   }
 }
-
+@media (min-width: 40rem){
+  .movie-grid{
+    margin-bottom: 12rem;
+  }
+}
+  
 @media (min-width: 50rem){
   .movie-grid{
     max-width: 65rem;
-    margin: auto;
+    margin: 0.25rem auto 10rem;
     grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));  
     grid-gap: 0.25rem;
   }

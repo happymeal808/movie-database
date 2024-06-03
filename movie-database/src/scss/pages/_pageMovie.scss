@@ -1,6 +1,20 @@
 @import '../base/vars';
 
 .page-movie{
+    position: relative;
+    .movie-card-container {
+        top:7rem;
+        display: flex;
+        max-height: fit-content;
+        
+
+        .interactables{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        
+    }
     .movie-backdrop{
         object-fit: cover;
         mask-image: linear-gradient(to bottom, $black 1%, transparent 100%);
@@ -21,21 +35,49 @@
             color: $lightgrey;
         }
         .movie-card__overview{
-            overflow: visible;
-            white-space: wrap;
+            display: block; /* or inline-block or any other display type as needed */
+            -webkit-line-clamp: none; /* Remove line clamping */
+            -webkit-box-orient: initial; /* Reset box orientation */
+            overflow: visible; /* Show the overflow content */
         }
         
     }
+
     .movie-trailer {
-        margin-top: 2rem;
+        margin: 2rem 0.5rem;
         text-align: center;
-    
-        h2 {
-          margin-bottom: 1rem;
-        }
     
         iframe {
           max-width: 100%;
         }
-      }
+    }
+}
+
+@media (min-width: 40rem) {
+    .page-movie {
+        margin-bottom: 12rem;
+        .movie-card {
+            position: absolute;
+            bottom: 25rem;
+            max-width: 60rem;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+
+            .movie-card__details{
+                .movie-card__title{
+                    font-size: clamp(1.5rem, 2.75vw, 2.5rem);
+                }
+            }
+        
+        }
+        .movie-trailer {
+            text-align: left;
+            max-width: 60rem;
+            padding: 0 1.5rem 2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }

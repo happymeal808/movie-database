@@ -1,0 +1,28 @@
+@import '../base/vars';
+.hero-banner {
+    height: 15rem;
+    mask-image: linear-gradient(to bottom, $black 1%, transparent 100%);
+}
+
+.hero-movie-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Vertically center the details */
+    justify-content: center; /* Horizontally center the details */
+    color: #ffffff;
+    text-align: center;
+}
+
+.hero-movie-card .movie-card__details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    height: auto; /* Ensure the height adjusts to the content */
+}
