@@ -11,7 +11,7 @@ const PageHome = () => {
     const [category, setCategory] = useState('nowPlaying');
     const [visibleMoviesCount, setVisibleMoviesCount] = useState(20); // Initially load 20 movies
     const favs = useSelector((state) => state.favs.items);
-    const [heroMovie, setHeroMovie] = useState(null); // State for hero movie
+    const [heroMovie, setHeroMovie] = useState(null);
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -40,7 +40,7 @@ const PageHome = () => {
             try {
                 const trendingMovies = await fetchTrendingMovies();
                 // Get a random movie from the top 3 trending movies
-                const randomIndex = Math.floor(Math.random() * Math.min(3, trendingMovies.length)); // Ensure it's within the array bounds
+                const randomIndex = Math.floor(Math.random() * Math.min(3, trendingMovies.length));
                 setHeroMovie(trendingMovies[randomIndex]);
             } catch (error) {
                 console.error('Failed to fetch trending movies:', error);
@@ -49,7 +49,7 @@ const PageHome = () => {
 
         fetchMovies();
         fetchHeroMovie();
-    }, [category]); // Ensure useEffect runs whenever category changes
+    }, [category]);
 
     const onCategoryChange = (newCategory) => {
         setCategory(newCategory);
@@ -57,7 +57,7 @@ const PageHome = () => {
 
     return (
         <div className="page-home">
-            {/* Hero Banner */}
+            {/* Hero Banner Attempt*/}
             {heroMovie && (
                 <div className="hero-banner">
                     <div className="hero-movie-card" style={{ backgroundImage: `url(${heroMovie.backdropPath})` }}>
@@ -90,6 +90,7 @@ const PageHome = () => {
                     />
                 ))}
             </div>
+            {/* Load more attempt */}
             {movies.length > visibleMoviesCount && (
                 <LoadMoreButton onClick={() => setVisibleMoviesCount(prevCount => prevCount + 20)} />
             )}

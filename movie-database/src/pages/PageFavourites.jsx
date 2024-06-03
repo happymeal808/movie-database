@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MovieCard from '../components/MovieCard';
 import { appTitle } from '../globals/globalVariables';
-import isFav from '../utils/isFav'; // Import the isFav utility function
+import isFav from '../utils/isFav';
 
 function PageFavourites() {
   const favs = useSelector((state) => state.favs.items);
