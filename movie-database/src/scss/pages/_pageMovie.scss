@@ -6,7 +6,6 @@
         top:7rem;
         display: flex;
         max-height: fit-content;
-        
 
         .interactables{
             position: absolute;
@@ -35,10 +34,10 @@
             color: $lightgrey;
         }
         .movie-card__overview{
-            display: block; /* or inline-block or any other display type as needed */
-            -webkit-line-clamp: none; /* Remove line clamping */
-            -webkit-box-orient: initial; /* Reset box orientation */
-            overflow: visible; /* Show the overflow content */
+            display: block;
+            -webkit-line-clamp: none; 
+            -webkit-box-orient: initial;
+            overflow: visible;
         }
         
     }
